@@ -1,45 +1,37 @@
 
- //Code (except taken from "Additional Examples"
-// This class implements a Stack ADT as a linked list
-		public class  LinkedStack {
+ 
+		public class  LinkedStack {  //Code (except taken from "Additional Examples"
+			                         // This class implements a Stack ADT as a linked list
 			
 			LinkedNode front; // Reference to the first LinkedNode in the list
 			int count; // Number of nodes in the list
 
-			// Constructor - initializes the front and count variables
-			LinkedStack() {
+			LinkedStack() {  // Constructor - initializes the front and count variables
 				front = null;
 				count = 0;
 			}
-
-			// Implements the push operation
-			void push(int x) {
+			void push(int x) {   // Implements the push operation
 				LinkedNode newNode = new LinkedNode(x);
 				newNode.next = front;
 				front = newNode;
 				count++;
 			}
-
-			// Implements the pop operation
-			int pop() {
+			int pop() {  // Implements the pop operation
 				int x = front.x;
 				front = front.next;
 				count--;
 				return x;
 			}
 
-			// Implements the peek operation
-			int peek() {
+			int peek() {  // Implements the peek operation
 				return front.x;
 			}
 
-			// Implements the isEmpty operation
-			boolean isEmpty() {
+			boolean isEmpty() { // Implements the isEmpty operation
 				return front == null;
 			}
 
-			// Implements the size operation
-			int size() {
+			int size() {  // Implements the size operation
 				return count;
 			}
 
@@ -56,25 +48,12 @@
 
 				return str;
 			}
-			
-			// Exercise 2
-			// Method will remove the elements from the bottom stack
-			public void removeBottomHalf(LinkedStack modList) {
-
-				// Declare an initializes variables
-				int x = (modList.size() / 2);
-				LinkedNode currentNode = modList.front;
-
-				// Loop through till the middle node of the LinkedList is found
-				for (int index = 1; index < x; index++) {
+    public void removeBottomHalf(LinkedStack modList) { // Method will remove the elements from the bottom stack
+		int x = (modList.size() / 2);  // Declare an initializes variables
+			LinkedNode currentNode = modList.front;
+            for (int index = 1; index < x; index++) {  // Loop through till the middle node of the LinkedList is found
 					currentNode = currentNode.next;
 				}
-
-				// Set node to null to break link
-				currentNode.next = null;
-
-			}
-
-		
-		
+				currentNode.next = null; // Set node to null to break link
+			}	
 	}

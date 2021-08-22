@@ -4,8 +4,6 @@ public class ArrayQ {
 	   private final int DEFAULT_CAPACITY = 10;
 	   private int front, rear, count;
 	   private int[] queue;
-
-	   
 	   public ArrayQ()
 	   {
 	      front = rear = count = 0;
@@ -21,11 +19,6 @@ public class ArrayQ {
 	       rear = (rear+1) % queue.length;
 	       count++;	   
 	   }
-
-	   //-----------------------------------------------------------------
-	   //  Creates a new array to store the contents of this queue with
-	   //  twice the capacity of the old one.
-	   //-----------------------------------------------------------------
 	   public void expandCapacity()
 	   {
 	      int[] larger = new int[queue.length*2];
@@ -48,25 +41,18 @@ public class ArrayQ {
 		   return x;
 	   }
 
-	   //  Returns a reference to the element at the front of the queue
-	   //  without removing it.
+	   //  Returns a reference to the element at the front of the queue, without removing it.
+	  
 	   public int first() {
 		   return queue[front];
 	   }
-
-	   //  Returns true if the queue contains no elements and false
-	   //  otherwise.
-	   public boolean isEmpty() {
+	   public boolean isEmpty() {  //  Returns true if the queue contains no elements and false, otherwise.
 		   return count==0;
 	   }
-
-	   //  Returns the number of elements in the queue.
-	   public int size() {
+	   public int size() {  //  Returns the number of elements in the queue.
 		   return count;
 	   }
-
-	   //  Returns a string representation of the queue.
-	   public String toString() {
+	   public String toString() {  //  Returns a string representation of the queue.
 		   return "";
 	   }
 
